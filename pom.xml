@@ -8,7 +8,7 @@
 
     <artifactId>ultracommerce-paypal</artifactId>
     <name>UltraCommerce PayPal</name>
-    <description>BroadleafCommerce PayPal</description>
+    <description>UltraCommerce PayPal</description>
     <version>3.0.2-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
