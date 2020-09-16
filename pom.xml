@@ -30,11 +30,6 @@
             <id>ultracommerce</id>
             <url>https://nexus.ultracommerce.io/repository/ultracommerce</url>
         </repository>
-        <repository>
-            <id>public snapshots</id>
-            <name>public snapshots</name>
-            <url>http://www.broadleafcommerce.org/nexus/content/repositories/snapshots/</url>
-        </repository>
     </repositories>
     <build>
         <plugins>
