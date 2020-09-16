@@ -70,12 +70,6 @@
     <dependencies>
         <dependency>
             <groupId>com.ultracommerce</groupId>
-            <artifactId>ultracommerce-third-party-integration-config</artifactId>
-            <version>default</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.ultracommerce</groupId>
             <artifactId>ultracommerce-common</artifactId>
             <version>${ultracommerce.version}</version>
         </dependency>
