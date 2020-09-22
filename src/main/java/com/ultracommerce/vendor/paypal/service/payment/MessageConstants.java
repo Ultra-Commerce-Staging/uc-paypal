@@ -1,21 +1,21 @@
 /*
  * #%L
- * BroadleafCommerce PayPal
+ * UltraCommerce PayPal
  * %%
- * Copyright (C) 2009 - 2014 Broadleaf Commerce
+ * Copyright (C) 2009 - 2014 Ultra Commerce
  * %%
- * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
- * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
- * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
- * the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * Licensed under the Ultra Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Ultra in which case
+ * the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
  * shall apply.
  *
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * #L%
  */
-package org.broadleafcommerce.vendor.paypal.service.payment;
+package com.ultracommerce.vendor.paypal.service.payment;
 
 /**
  * @author Jeff Fischer
@@ -54,7 +54,7 @@ public class MessageConstants {
     public static final String HTTP_HEADER_REQUEST_ID = "PayPal-Request-Id";
     public static final String HTTP_HEADER_MOCK_RESPONSE = "PayPal-Mock-Response";
     public static final String BN = "PayPal-Partner-Attribution-Id";
-    public static final String BNCODE = "BroadleafCommerce_Cart_EC";
+    public static final String BNCODE = "UltraCommerce_Cart_EC";
     public static final String HTTP_PAYERID = "payerId";
     public static final String HTTP_PAYMENTID = "paymentId";
     public static final String HTTP_TOKEN = "token";

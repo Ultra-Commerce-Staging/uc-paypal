@@ -1,32 +1,32 @@
 /*
  * #%L
- * BroadleafCommerce PayPal
+ * UltraCommerce PayPal
  * %%
- * Copyright (C) 2009 - 2018 Broadleaf Commerce
+ * Copyright (C) 2009 - 2018 Ultra Commerce
  * %%
- * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
- * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
- * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
- * the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * Licensed under the Ultra Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Ultra in which case
+ * the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
  * shall apply.
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * #L%
  */
-package org.broadleafcommerce.vendor.paypal.service;
+package com.ultracommerce.vendor.paypal.service;
 
-import org.broadleafcommerce.common.payment.dto.PaymentRequestDTO;
-import org.broadleafcommerce.common.payment.service.CurrentOrderPaymentRequestService;
-import org.broadleafcommerce.common.vendor.service.exception.PaymentException;
-import org.broadleafcommerce.payment.service.gateway.ExternalCallPayPalCheckoutService;
-import org.broadleafcommerce.vendor.paypal.service.payment.MessageConstants;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalCreateBillingAgreementRequest;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalCreateBillingAgreementResponse;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalCreatePlanRequest;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalCreatePlanResponse;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalUpdatePlanRequest;
+import com.ultracommerce.common.payment.dto.PaymentRequestDTO;
+import com.ultracommerce.common.payment.service.CurrentOrderPaymentRequestService;
+import com.ultracommerce.common.vendor.service.exception.PaymentException;
+import com.ultracommerce.payment.service.gateway.ExternalCallPayPalCheckoutService;
+import com.ultracommerce.vendor.paypal.service.payment.MessageConstants;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalCreateBillingAgreementRequest;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalCreateBillingAgreementResponse;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalCreatePlanRequest;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalCreatePlanResponse;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalUpdatePlanRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.paypal.api.payments.Agreement;
@@ -50,13 +50,13 @@ import javax.annotation.Resource;
  * Billing Agreement Tokens and Merchant Initiated Billing Agreements are supported via the
  * {@link PayPalAgreementTokenService}
  */
-@Service("blPayPalBillingAgreementService")
+@Service("ucPayPalBillingAgreementService")
 public class PayPalBillingAgreementServiceImpl implements PayPalBillingAgreementService {
 
-    @Resource(name = "blExternalCallPayPalCheckoutService")
+    @Resource(name = "ucExternalCallPayPalCheckoutService")
     protected ExternalCallPayPalCheckoutService externalCallService;
 
-    @Resource(name = "blPayPalWebProfileService")
+    @Resource(name = "ucPayPalWebProfileService")
     protected PayPalWebProfileService webProfileService;
 
     @Autowired(required = false)

@@ -1,1 +1,1 @@
-org.broadleafcommerce.common.module.BroadleafModuleRegistration=org.broadleafcommerce.vendor.paypal.config.PaypalModuleRegistration
+com.ultracommerce.common.module.UltraModuleRegistration=com.ultracommerce.vendor.paypal.config.PaypalModuleRegistration

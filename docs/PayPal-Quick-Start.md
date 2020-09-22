@@ -1,6 +1,6 @@
 # PayPal Checkout Quick Start
 
-Broadleaf Commerce offers an out-of-the-box PayPal solution that requires little configuration and is easily set up.
+Ultra Commerce offers an out-of-the-box PayPal solution that requires little configuration and is easily set up.
 
 **You must have completed the [[PayPal Environment Setup]] before continuing**
 
@@ -13,8 +13,8 @@ Once you have established an account with PayPal, begin by including the PayPal 
 
 ```xml
 <dependency>
-    <groupId>org.broadleafcommerce</groupId>
-    <artifactId>broadleaf-paypal</artifactId>
+    <groupId>com.ultracommerce</groupId>
+    <artifactId>ultra-paypal</artifactId>
     <version>insert version here</version>
 </dependency>
 ```
@@ -23,8 +23,8 @@ Make sure to include the dependency in your `site` AND `admin` pom.xml as well (
 
 ```xml
 <dependency>
-    <groupId>org.broadleafcommerce</groupId>
-    <artifactId>broadleaf-paypal</artifactId>
+    <groupId>com.ultracommerce</groupId>
+    <artifactId>ultra-paypal</artifactId>
 </dependency>
 ```
 
@@ -48,7 +48,7 @@ PayPal's `Smart Checkout` button:
     </div>
 ```
 
-> Note: if you are using Broadleaf's Heat Clinic store, you can modify `cartOperations.html` and place this under the normal checkout button.
+> Note: if you are using Ultra's Heat Clinic store, you can modify `cartOperations.html` and place this under the normal checkout button.
 
 2. Include the following JS to invoke
 
@@ -81,7 +81,7 @@ PayPal's `Smart Checkout` button:
         },
 
         payment : function(data, actions) {
-            return BLC.post({
+            return UC.post({
                 url : [[${@environment.getProperty('gateway.paypal.smart.button.payment.url')}]],
                 data : {
                     performCheckout : false
@@ -91,7 +91,7 @@ PayPal's `Smart Checkout` button:
             });
         },
         onAuthorize : function(data, actions) {
-            BLC.get({
+            UC.get({
                 url : [[${@environment.getProperty('gateway.paypal.smart.button.authorize.url')}]],
                 data : {
                     paymentId : data.paymentID,
@@ -108,7 +108,7 @@ PayPal's `Smart Checkout` button:
   
 ```
         onAuthorize : function(data, actions) {
-            BLC.get({
+            UC.get({
                 url : [[${@environment.getProperty('gateway.paypal.smart.button.authorize.url')}]],
                 data : {
                     billingToken: data.billingToken,
@@ -119,7 +119,7 @@ PayPal's `Smart Checkout` button:
 ```
 
 
-If you are using Broadleaf's Heat Clinic demo store, you may also wish to change the following templates to conform to this flow:
+If you are using Ultra's Heat Clinic demo store, you may also wish to change the following templates to conform to this flow:
 
 in `reviewStage.html` - change to:
 
@@ -136,7 +136,7 @@ if you are switching to a billing agreements flow - change to:
 ### Customizations
 
 One of the more typical customizations you may wish to do revolves around passing the appropriate data to PayPal.
-The service that handles translating a Broadleaf cart into the appropriate PayPal request is encapsulated in the following spring components `blPayPalPaymentService` and `blPayPalAgreementTokenService`.
+The service that handles translating a Ultra cart into the appropriate PayPal request is encapsulated in the following spring components `ucPayPalPaymentService` and `ucPayPalAgreementTokenService`.
 These components handles things like `Payer`, `Transaction`, `Payment`, and `ShippingAddress` construction. You may wish
 to extend these services to send the appropriate values based on your business requirements.
 

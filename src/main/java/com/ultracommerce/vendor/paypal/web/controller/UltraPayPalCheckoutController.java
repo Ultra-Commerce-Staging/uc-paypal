@@ -1,35 +1,35 @@
 /*
  * #%L
- * BroadleafCommerce PayPal
+ * UltraCommerce PayPal
  * %%
- * Copyright (C) 2009 - 2014 Broadleaf Commerce
+ * Copyright (C) 2009 - 2014 Ultra Commerce
  * %%
- * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
- * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
- * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
- * the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * Licensed under the Ultra Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Ultra in which case
+ * the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
  * shall apply.
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * #L%
  */
-package org.broadleafcommerce.vendor.paypal.web.controller;
+package com.ultracommerce.vendor.paypal.web.controller;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.broadleafcommerce.common.payment.dto.PaymentResponseDTO;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayConfiguration;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayHostedService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayWebResponseService;
-import org.broadleafcommerce.common.vendor.service.exception.PaymentException;
-import org.broadleafcommerce.common.web.payment.controller.PaymentGatewayAbstractController;
-import org.broadleafcommerce.vendor.paypal.api.AgreementToken;
-import org.broadleafcommerce.vendor.paypal.service.PayPalAgreementTokenService;
-import org.broadleafcommerce.vendor.paypal.service.PayPalPaymentService;
-import org.broadleafcommerce.vendor.paypal.service.payment.MessageConstants;
+import com.ultracommerce.common.payment.dto.PaymentResponseDTO;
+import com.ultracommerce.common.payment.service.PaymentGatewayConfiguration;
+import com.ultracommerce.common.payment.service.PaymentGatewayHostedService;
+import com.ultracommerce.common.payment.service.PaymentGatewayWebResponseService;
+import com.ultracommerce.common.vendor.service.exception.PaymentException;
+import com.ultracommerce.common.web.payment.controller.PaymentGatewayAbstractController;
+import com.ultracommerce.vendor.paypal.api.AgreementToken;
+import com.ultracommerce.vendor.paypal.service.PayPalAgreementTokenService;
+import com.ultracommerce.vendor.paypal.service.PayPalPaymentService;
+import com.ultracommerce.vendor.paypal.service.payment.MessageConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,26 +49,26 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @author Elbert Bautista (elbertbautista)
  */
-@Controller("blPayPalCheckoutController")
-@RequestMapping("/" + BroadleafPayPalCheckoutController.GATEWAY_CONTEXT_KEY)
-public class BroadleafPayPalCheckoutController extends PaymentGatewayAbstractController {
+@Controller("ucPayPalCheckoutController")
+@RequestMapping("/" + UltraPayPalCheckoutController.GATEWAY_CONTEXT_KEY)
+public class UltraPayPalCheckoutController extends PaymentGatewayAbstractController {
 
-    private static final Log LOG = LogFactory.getLog(BroadleafPayPalCheckoutController.class);
+    private static final Log LOG = LogFactory.getLog(UltraPayPalCheckoutController.class);
     protected static final String GATEWAY_CONTEXT_KEY = "paypal-checkout";
 
-    @Resource(name = "blPayPalCheckoutWebResponseService")
+    @Resource(name = "ucPayPalCheckoutWebResponseService")
     protected PaymentGatewayWebResponseService paymentGatewayWebResponseService;
 
-    @Resource(name = "blPayPalCheckoutHostedService")
+    @Resource(name = "ucPayPalCheckoutHostedService")
     protected PaymentGatewayHostedService paymentGatewayHostedService;
 
-    @Resource(name = "blPayPalCheckoutConfiguration")
+    @Resource(name = "ucPayPalCheckoutConfiguration")
     protected PaymentGatewayConfiguration paymentGatewayConfiguration;
 
-    @Resource(name = "blPayPalPaymentService")
+    @Resource(name = "ucPayPalPaymentService")
     protected PayPalPaymentService paymentService;
 
-    @Resource(name = "blPayPalAgreementTokenService")
+    @Resource(name = "ucPayPalAgreementTokenService")
     protected PayPalAgreementTokenService agreementTokenService;
 
     @Override

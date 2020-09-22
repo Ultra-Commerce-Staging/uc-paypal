@@ -1,55 +1,55 @@
 <!--
   #%L
-  BroadleafCommerce PayPal
+  UltraCommerce PayPal
   %%
-  Copyright (C) 2009 - 2016 Broadleaf Commerce
+  Copyright (C) 2009 - 2016 Ultra Commerce
   %%
-  Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
-  (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
-  unless the restrictions on use therein are violated and require payment to Broadleaf in which case
-  the Broadleaf End User License Agreement (EULA), Version 1.1
-  (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+  Licensed under the Ultra Fair Use License Agreement, Version 1.0
+  (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+  unless the restrictions on use therein are violated and require payment to Ultra in which case
+  the Ultra End User License Agreement (EULA), Version 1.1
+  (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
   shall apply.
   
   Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
-  between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+  between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
   #L%
   -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:mo="http://schema.broadleafcommerce.org/mo"
+       xmlns:mo="http://schema.ultracommerce.org/mo"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-           http://schema.broadleafcommerce.org/mo
-           http://schema.broadleafcommerce.org/mo/mo-3.0.xsd">
+           http://schema.ultracommerce.org/mo
+           http://schema.ultracommerce.org/mo/mo-3.0.xsd">
 
-    <context:component-scan base-package="org.broadleafcommerce.payment.service.gateway"/>
-    <context:component-scan base-package="org.broadleafcommerce.payment.web"/>
-    <context:component-scan base-package="org.broadleafcommerce.vendor.paypal">
-        <context:exclude-filter type="regex" expression="org.broadleafcommerce.vendor.paypal.web.controller.*"/>
+    <context:component-scan base-package="com.ultracommerce.payment.service.gateway"/>
+    <context:component-scan base-package="com.ultracommerce.payment.web"/>
+    <context:component-scan base-package="com.ultracommerce.vendor.paypal">
+        <context:exclude-filter type="regex" expression="com.ultracommerce.vendor.paypal.web.controller.*"/>
     </context:component-scan>
 
-    <bean class="org.broadleafcommerce.vendor.paypal.service.payment.PayPalCheckoutPaymentGatewayType"/>
+    <bean class="com.ultracommerce.vendor.paypal.service.payment.PayPalCheckoutPaymentGatewayType"/>
 
-    <bean id="blPayPalConfigurationServices" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <bean id="ucPayPalConfigurationServices" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
-                <ref bean="blPayPalCheckoutConfigurationService"/>
+                <ref bean="ucPayPalCheckoutConfigurationService"/>
             </list>
         </property>
     </bean>
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blPayPalConfigurationServices"/>
-        <property name="targetRef" value="blPaymentGatewayConfigurationServices"/>
+    <bean class="com.ultracommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucPayPalConfigurationServices"/>
+        <property name="targetRef" value="ucPaymentGatewayConfigurationServices"/>
     </bean>
     
-    <bean class="org.broadleafcommerce.common.logging.ModuleLifecycleLoggingBean">
+    <bean class="com.ultracommerce.common.logging.ModuleLifecycleLoggingBean">
         <property name="moduleName" value="Paypal" />
         <property name="lifeCycleEvent" value="LOADING" />
     </bean>

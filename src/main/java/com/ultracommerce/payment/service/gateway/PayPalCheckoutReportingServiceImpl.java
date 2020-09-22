@@ -1,36 +1,36 @@
 /*
  * #%L
- * BroadleafCommerce PayPal
+ * UltraCommerce PayPal
  * %%
- * Copyright (C) 2009 - 2014 Broadleaf Commerce
+ * Copyright (C) 2009 - 2014 Ultra Commerce
  * %%
- * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
- * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
- * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
- * the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * Licensed under the Ultra Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Ultra in which case
+ * the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
  * shall apply.
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * #L%
  */
-package org.broadleafcommerce.payment.service.gateway;
+package com.ultracommerce.payment.service.gateway;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.broadleafcommerce.common.payment.PaymentType;
-import org.broadleafcommerce.common.payment.dto.PaymentRequestDTO;
-import org.broadleafcommerce.common.payment.dto.PaymentResponseDTO;
-import org.broadleafcommerce.common.payment.service.AbstractPaymentGatewayReportingService;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayReportingService;
-import org.broadleafcommerce.common.vendor.service.exception.PaymentException;
-import org.broadleafcommerce.vendor.paypal.service.payment.MessageConstants;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalCheckoutPaymentGatewayType;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalPaymentRetrievalRequest;
-import org.broadleafcommerce.vendor.paypal.service.payment.PayPalPaymentRetrievalResponse;
+import com.ultracommerce.common.payment.PaymentType;
+import com.ultracommerce.common.payment.dto.PaymentRequestDTO;
+import com.ultracommerce.common.payment.dto.PaymentResponseDTO;
+import com.ultracommerce.common.payment.service.AbstractPaymentGatewayReportingService;
+import com.ultracommerce.common.payment.service.PaymentGatewayReportingService;
+import com.ultracommerce.common.vendor.service.exception.PaymentException;
+import com.ultracommerce.vendor.paypal.service.payment.MessageConstants;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalCheckoutPaymentGatewayType;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalPaymentRetrievalRequest;
+import com.ultracommerce.vendor.paypal.service.payment.PayPalPaymentRetrievalResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import com.paypal.api.payments.Payment;
@@ -39,12 +39,12 @@ import javax.annotation.Resource;
 /**
  * @author Elbert Bautista (elbertbautista)
  */
-@Service("blPayPalCheckoutReportingService")
+@Service("ucPayPalCheckoutReportingService")
 public class PayPalCheckoutReportingServiceImpl extends AbstractPaymentGatewayReportingService implements PaymentGatewayReportingService {
 
     private static final Log LOG = LogFactory.getLog(PayPalCheckoutReportingServiceImpl.class);
 
-    @Resource(name = "blExternalCallPayPalCheckoutService")
+    @Resource(name = "ucExternalCallPayPalCheckoutService")
     protected ExternalCallPayPalCheckoutService payPalCheckoutService;
 
     @Override

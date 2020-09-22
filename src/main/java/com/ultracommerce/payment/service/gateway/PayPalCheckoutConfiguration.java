@@ -1,26 +1,26 @@
 /*
  * #%L
- * BroadleafCommerce PayPal
+ * UltraCommerce PayPal
  * %%
- * Copyright (C) 2009 - 2014 Broadleaf Commerce
+ * Copyright (C) 2009 - 2014 Ultra Commerce
  * %%
- * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
- * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
- * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
- * the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * Licensed under the Ultra Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Ultra in which case
+ * the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
  * shall apply.
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * #L%
  */
-package org.broadleafcommerce.payment.service.gateway;
+package com.ultracommerce.payment.service.gateway;
 
-import org.broadleafcommerce.common.payment.dto.PaymentRequestDTO;
-import org.broadleafcommerce.common.payment.service.PaymentGatewayConfiguration;
-import org.broadleafcommerce.vendor.paypal.service.PayPalWebProfileService;
-import org.broadleafcommerce.vendor.paypal.service.payment.type.PayPalShippingDisplayType;
+import com.ultracommerce.common.payment.dto.PaymentRequestDTO;
+import com.ultracommerce.common.payment.service.PaymentGatewayConfiguration;
+import com.ultracommerce.vendor.paypal.service.PayPalWebProfileService;
+import com.ultracommerce.vendor.paypal.service.payment.type.PayPalShippingDisplayType;
 
 import java.util.Map;
 
@@ -109,7 +109,7 @@ public interface PayPalCheckoutConfiguration extends PaymentGatewayConfiguration
      * </pre>
      * 
      * <p>
-     * Note that Broadleaf uses a piece of this to determine if we should complete checkout on callback or not. This is done
+     * Note that Ultra uses a piece of this to determine if we should complete checkout on callback or not. This is done
      * as "ccoc=true_12345" where {@code true} is the value of {@link PaymentRequestDTO#isCompleteCheckoutOnCallback()}. So,
      * the minimum string that will be contained in the custom field is {@code ccoc=true_12345}, plus whatever other fields you have.
      * 
