@@ -12,7 +12,7 @@
     <version>3.0.2-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <ultracommerce.version>6.1.3-SNAPSHOT</ultracommerce.version>
+        <ultracommerce.version>6.1.3-GA</ultracommerce.version>
         <project.uri>${user.dir}</project.uri>
     </properties>
     <scm>
